@@ -48,7 +48,7 @@ function addLeadingZero(value) {
   return value.toString().padStart(2, '0');
 }
 
-const onCountDownTime = () => {
+function onCountDownTime() {
   let timer = setInterval(() => {
     let countdown = new Date(refs.input.value) - new Date();
     refs.btnStart.disabled = true;
@@ -62,6 +62,6 @@ const onCountDownTime = () => {
       clearInterval(timer);
     }
   }, 1000);
-};
+}
 
 refs.btnStart.addEventListener('click', onCountDownTime);

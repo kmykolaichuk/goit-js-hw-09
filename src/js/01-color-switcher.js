@@ -11,7 +11,7 @@ function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 
-const onStartSwitchColor = () => {
+function onStartSwitchColor() {
   refs.btnStart.disabled = true;
   refs.btnStop.disabled = false;
 
@@ -19,13 +19,13 @@ const onStartSwitchColor = () => {
     let color = getRandomHexColor();
     refs.body.style.backgroundColor = color;
   }, 1000);
-};
+}
 
-const onStopSwitchColor = () => {
+function onStopSwitchColor() {
   clearInterval(timerId);
   refs.btnStart.disabled = false;
   refs.btnStop.disabled = true;
-};
+}
 
 refs.btnStart.addEventListener('click', onStartSwitchColor);
 refs.btnStop.addEventListener('click', onStopSwitchColor);
