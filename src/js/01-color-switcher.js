@@ -11,7 +11,7 @@ function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 
-const startSwitchColor = () => {
+const onStartSwitchColor = () => {
   refs.btnStart.disabled = true;
   refs.btnStop.disabled = false;
 
@@ -21,11 +21,11 @@ const startSwitchColor = () => {
   }, 1000);
 };
 
-const stopSwitchColor = () => {
+const onStopSwitchColor = () => {
   clearInterval(timerId);
   refs.btnStart.disabled = false;
   refs.btnStop.disabled = true;
 };
 
-refs.btnStart.addEventListener('click', startSwitchColor);
-refs.btnStop.addEventListener('click', stopSwitchColor);
+refs.btnStart.addEventListener('click', onStartSwitchColor);
+refs.btnStop.addEventListener('click', onStopSwitchColor);
