@@ -49,9 +49,10 @@ function addLeadingZero(value) {
 }
 
 function onCountDownTime() {
+  refs.btnStart.disabled = true;
+  refs.input.disabled = true;
   let timer = setInterval(() => {
     let countdown = new Date(refs.input.value) - new Date();
-    refs.btnStart.disabled = true;
     if (countdown > 0) {
       let timerData = convertMs(countdown);
       refs.days.textContent = addLeadingZero(timerData.days);
